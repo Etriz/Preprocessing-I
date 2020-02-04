@@ -1,1 +1,273 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Poppins Regular'), local('Poppins-Regular'), url(https://fonts.gstatic.com/s/poppins/v9/pxiEyp8kv8JHgFVrJJfedw.ttf) format('truetype');
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+body {
+  height: 100%;
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.2;
+}
+h1 {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 500px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+hr {
+  margin: 2% 0;
+}
+.container {
+  width: 50%;
+  margin: 0 auto;
+}
+nav {
+  background: #49afcd;
+}
+nav .container {
+  display: flex;
+  justify-content: flex-start;
+}
+@media (max-width: 500px) {
+  nav .container {
+    justify-content: space-between;
+  }
+}
+nav a {
+  text-decoration: none;
+  color: #ddd;
+  padding: 2rem 1rem;
+}
+@media (max-width: 500px) {
+  nav a {
+    padding: 1rem 0.5rem;
+  }
+}
+nav a:hover {
+  background: #ddd;
+  color: #49afcd;
+}
+header {
+  background: #ddd;
+  padding: 2%;
+}
+@media (max-width: 500px) {
+  header {
+    padding: 4%;
+  }
+}
+.about {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 4%;
+}
+.about div {
+  width: 45%;
+}
+.about div ul li {
+  padding: 2%;
+  border: 1px solid #ddd;
+}
+.work {
+  display: flex;
+  flex-wrap: wrap;
+}
+.work table {
+  width: 100%;
+}
+.work table tr:first-child {
+  font-weight: bold;
+}
+.work table tr:nth-of-type(even) {
+  background: #ddd;
+}
+.work table tr td {
+  padding: 1%;
+  border: 1px solid #ddd;
+}
+footer {
+  text-align: center;
+  padding: 2%;
+  background: #49afcd;
+  color: #fafafa;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.button {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  height: 4rem;
+  padding: 0 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  background: #fafafa;
+  color: #222222;
+}
+.button-info {
+  background: #49afcd;
+  color: #fafafa;
+}
+.button-info:hover,
+.button-info:focus {
+  background: #339bba;
+  color: #fafafa;
+}
