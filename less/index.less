@@ -3,57 +3,273 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
-html, body {
-    height: 100%;
+html {
+  height: 100%;
+  font-size: 62.5%;
 }
+body {
+  height: 100%;
+  font-size: 1.5rem;
+  font-family: @default-font;
+  line-height: 1.2;
+}
+// end of reset
+@default-font: "Poppins", sans-serif;
+@grayBG: #ddd;
+@info: #49afcd;
+@light: #fafafa;
+@pad: 2%;
+@border: 1px solid @grayBG;
+.flex() {
+  display: flex;
+}
+.font-size(@font) {
+  font-size: @font;
+}
+// end of variables
+h1 {
+  .font-size(5rem);
+  margin-bottom: 1.5rem;
 
+  @media (max-width: 500px) {
+    .font-size(2rem);
+  }
+}
+h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  @media (max-width: 500px) {
+    font-size: 1.5rem;
+  }
+}
+hr {
+  margin: @pad 0;
+}
+.container {
+  width: 50%;
+  margin: 0 auto;
+}
+nav {
+  background: @info;
+}
+nav .container {
+  .flex;
+  justify-content: flex-start;
+  @media (max-width: 500px) {
+    justify-content: space-between;
+  }
+}
+nav a {
+  text-decoration: none;
+  color: @grayBG;
+  padding: 2rem 1rem;
+  @media (max-width: 500px) {
+    padding: 1rem 0.5rem;
+  }
+}
+nav a:hover {
+  background: @grayBG;
+  color: @info;
+}
+header {
+  background: @grayBG;
+  padding: @pad;
+  @media (max-width: 500px) {
+    padding: @pad*2;
+  }
+}
+.about {
+  .flex;
+  justify-content: space-evenly;
+  margin: @pad*2;
+}
+.about div {
+  width: 45%;
+}
+.about div ul li {
+  padding: @pad;
+  border: @border;
+}
+.work {
+  .flex();
+  flex-wrap: wrap;
+}
+.work table {
+  width: 100%;
+}
+.work table tr:first-child {
+  font-weight: bold;
+}
+.work table tr:nth-of-type(even) {
+  background: @grayBG;
+}
+.work table tr td {
+  padding: @pad / 2;
+  border: @border;
+}
+footer {
+  text-align: center;
+  padding: @pad;
+  background: @info;
+  color: @light;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+// Buttons
+.button {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  height: 4rem;
+  padding: 0 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  background: #fafafa;
+  color: #222222;
+}
+.button-info {
+  background: @info;
+  color: @light;
+}
+.button-info:hover,
+.button-info:focus {
+  background: #339bba;
+  color: #fafafa;
+}
